@@ -1,0 +1,29 @@
+<form>
+  <div class="input-group">
+    <section>
+      <label
+        >INITIAL INVESTMENT
+        <input type="text" [(ngModel)]="userInput.initialInvestment" />
+      </label>
+
+      <label
+        >EXPECTED RETURN
+        <input type="text" [(ngModel)]="userInput.expectedReturn" />
+      </label>
+    </section>
+
+    <section>
+      <label
+        >ANNUAL INVESTMENT
+        <input type="text" [(ngModel)]="userInput.annualInvestment" />
+      </label>
+
+      <label
+        >DURATION
+        <input type="text" [(ngModel)]="userInput.duration" />
+      </label>
+    </section>
+  </div>
+
+  <button type="button">CALCULATE</button>
+</form>
