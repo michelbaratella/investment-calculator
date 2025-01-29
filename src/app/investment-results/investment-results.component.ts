@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 import { InvestmentService } from '../investment.service';
 
@@ -13,7 +13,13 @@ export class InvestmentResultsComponent {
   private service = inject(InvestmentService);
   // constructor(public service: InvestmentService) {}
 
-  get results() {
-    return this.service.resultsData;
-  }
+  // This get would also work for signals
+  // get results() {
+  //   return this.service.resultsData;
+  // }
+
+  results = computed(() => this.service.resultsData());
+
+  // Third option to consume the signal
+  // results = () => this.service.resultsData.asReadonly();
 }
